@@ -1,0 +1,17 @@
+<form nz-form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label>Username</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="username" />
+    </nz-form-control>
+  </nz-form-item>
+  
+  <nz-form-item>
+    <nz-form-label>Password</nz-form-label>
+    <nz-form-control>
+      <input nz-input type="password" formControlName="password" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <button nz-button nzType="primary" type="submit">Sign Up</button>
+</form>
