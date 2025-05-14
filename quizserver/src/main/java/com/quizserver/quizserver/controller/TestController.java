@@ -1,6 +1,7 @@
 package com.quizserver.quizserver.controller;
 
 import com.quizserver.quizserver.dto.QuestionDTO;
+import com.quizserver.quizserver.dto.SubmitTestDTO;
 import com.quizserver.quizserver.dto.TestDTO;
 import com.quizserver.quizserver.service.test.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +43,32 @@ public class TestController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getAllQuestions(@PathVariable Long id){
+        try{
+            return new ResponseEntity<>(testService.getAllQuestionsByTest(id), HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+    @PostMapping("/submit-test")
+    public ResponseEntity<?> submitTest(@RequestBody SubmitTestDTO dto) {
+        try {
+            return new ResponseEntity<>(testService.submitTest(dto), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/test-result")
+    public ResponseEntity<?> getAllTestResults(){
+        try{
+            return new ResponseEntity<>(testService.getAllTestResults(), HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
 
 }
 
