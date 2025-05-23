@@ -51,8 +51,8 @@ jobs:
     - name: Push to Docker Hub
       if: github.ref == 'refs/heads/main'
       run: |
-        docker tag quiz-backend ${{ secrets.DOCKER_HUB_USERNAME }}/quizserverprojet-backend:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/quizserverprojet-backend:latest
+        docker tag quiz-backend ${{ secrets.DOCKERHUB_USERNAME }}/quizserverprojet-backend:latest
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/quizserverprojet-backend:latest
 
 
 
