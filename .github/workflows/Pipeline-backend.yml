@@ -51,8 +51,10 @@ jobs:
     - name: Push to Docker Hub
       if: github.ref == 'refs/heads/main'
       run: |
-        docker tag quiz-backend ${{ secrets.DOCKER_HUB_USERNAME }}/quiz-backend:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/quiz-backend:latest
+        docker tag quiz-backend ${{ secrets.DOCKER_HUB_USERNAME }}/quizserverprojet-frontend:latest
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/quizserverprojet-frontend:latest
+
+
 
     - name: Cache Maven packages
       uses: actions/cache@v3
