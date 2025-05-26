@@ -55,8 +55,8 @@ jobs:
     - name: Push to Docker Hub
       if: github.ref == 'refs/heads/main'
       run: |
-        docker tag quiz-frontend ${{ secrets.DOCKER_HUB_USERNAME }}/quiz-frontend:latest
-        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/quiz-frontend:latest
+        docker tag quiz-frontend ${{ secrets.DOCKERHUB_USERNAME }}/quiz-frontend:latest
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/quiz-frontend:latest
 
     - name: Cache npm packages
       uses: actions/cache@v3
