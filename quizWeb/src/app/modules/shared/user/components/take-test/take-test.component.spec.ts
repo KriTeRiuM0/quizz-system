@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TakeTestComponent } from './take-test.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
 
 describe('TakeTestComponent', () => {
   let component: TakeTestComponent;
@@ -8,7 +10,10 @@ describe('TakeTestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TakeTestComponent]
+      imports: [HttpClientTestingModule, TakeTestComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: {} }
+      ]
     })
     .compileComponents();
 

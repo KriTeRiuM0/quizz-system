@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddQuestionInTestComponent } from './add-question-in-test.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AddQuestionInTestComponent', () => {
   let component: AddQuestionInTestComponent;
@@ -8,7 +10,10 @@ describe('AddQuestionInTestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddQuestionInTestComponent]
+      imports: [HttpClientTestingModule, AddQuestionInTestComponent],
+      providers: [
+        { provide: ActivatedRoute, useValue: {} }
+      ]
     })
     .compileComponents();
 

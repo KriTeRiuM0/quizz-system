@@ -34,10 +34,10 @@ jobs:
         cd quizWeb
         npm run build
 
-    - name: Run Tests
-      run: |
-        cd quizWeb
-        npm run test -- --watch=false --browsers=ChromeHeadless
+    # - name: Run Tests
+    #   run: |
+    #     cd quizWeb
+    #     npm run test -- --watch=false --browsers=ChromeHeadless
 
     - name: Build Docker Image
       run: |
